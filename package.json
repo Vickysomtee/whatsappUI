@@ -7,8 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@mdi/font": "^5.9.55",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
+    "vue-material-design-icons": "^4.12.1",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
