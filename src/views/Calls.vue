@@ -113,8 +113,7 @@ img {
   padding-bottom: 16px;
 }
 
-.main-content {
-}
+
 
 .name {
   font-size: 17px;

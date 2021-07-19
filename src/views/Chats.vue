@@ -26,6 +26,7 @@
 
 <script>
 import { ref } from "@vue/reactivity";
+import {useRouter, useRoute} from 'vue-router'
 // @ is an alias to /src
 
 export default {
@@ -33,6 +34,10 @@ export default {
   components: {},
 
   setup() {
+
+    const router = useRouter()
+    const route = useRoute()
+
     const chats = ref([
       {
         name: "Bishop",
@@ -96,6 +101,8 @@ export default {
       },
     ]);
 
+    console.log(router.currentRoute.value.name)
+    console.log(route)
     return { chats };
   },
 };
@@ -168,9 +175,12 @@ span {
   padding: 15px;
   border-radius: 100%;
   position: fixed;
-  z-index: 1;
   top: 90%;
   left: 80%;
   background: #25d366;
+  display: block;
+	clear: none;
+	z-index: 1000001;
+  float: none;
 }
 </style>
