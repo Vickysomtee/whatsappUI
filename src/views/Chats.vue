@@ -1,12 +1,12 @@
 <template>
   <main class="chats">
     <div v-for="(chat, index) in chats" :key="index" class="chat">
-      <img src="../assets/realtor-1.jpeg" alt="img" />
+      <img :src="chat.image" alt="img" />
       <div class="content">
         <div class="message-title">
           <div class="title">{{ chat.name }}</div>
           <div
-            :style="[chat.count ? { color: '#25d366' } : { color: '#696b6a' }]"
+            :style="chat.count ? { color: '#25d366' } : { color: '#696b6a' }"
             class="message-seen time"
           >
             {{ chat.time }}
@@ -18,15 +18,16 @@
         </div>
       </div>
     </div>
-    <span class="material-icons">
+  </main>
+   <span class="material-icons">
       chat
     </span>
-  </main>
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
-import {useRouter, useRoute} from 'vue-router'
+import {useRouter, useRoute} from 'vue-router';
+import  img1 from "@/assets/realtor-1.jpeg";
 // @ is an alias to /src
 
 export default {
@@ -40,12 +41,14 @@ export default {
 
     const chats = ref([
       {
+        image: require("../assets/realtor-1.jpeg"),
         name: "Bishop",
         message: "Are you home now?",
         time: "2:33pm",
         count: 2,
       },
       {
+         image: require("../assets/nqobile-vundla-5pSUw8o_xwc-unsplash.jpg"),
         name: "Facebook Nigeria",
         message: "+234 908 567 5667 left",
         time: "2:48pm",
@@ -53,47 +56,55 @@ export default {
       },
       {
         name: "Sopuru",
+        image: require("../assets/lucas-favre-lKpSjjxVsFg-unsplash.jpg"),
         message: "Howfar, help me buy caprisonne when coming back",
         time: "11:02pm",
         count: 2,
       },
       {
+        image: require("../assets/vine-ramazani-MRW40FzUASE-unsplash.jpg"),
         name: "Daniel",
         message: "Check the bitcoin minning site",
         time: "Yesterday",
         count: null,
       },
       {
+        image: require("../assets/jimmy-dean-TYQ6fyF3Amc-unsplash.jpg"),
         name: "Big Sis",
         message: "I mistakenly sent you N5000",
         time: "7/8/21",
         count: 1,
       },
       {
-        name: "Daniel",
+        image: require("../assets/chris-yang-bSjj-ghl-wk-unsplash.jpg"),
+        name: "Susan",
         message: "Check the bitcoin minning site",
         time: "Yesterday",
         count: null,
       },
       {
+        image: require("../assets/pang-yuhao-_kd5cxwZOK4-unsplash.jpg"),
         name: "Class Of  2019",
         message: "+234 908 567 5667: hey guys, I finally got a job",
         time: "7/8/21",
         count: 366,
       },
       {
+        image: require("../assets/surface-V_JGp9lnojw-unsplash.jpg"),
         name: "Software Dev Forum",
         message: "+1 759 390 3389: we would have another session",
         time: "7/8/21",
         count: 1,
       },
       {
+        image: require("../assets/edward-howell-c_BuV-xal7I-unsplash.jpg"),
         name: "Homie",
         message: "We are organizing a send-off party for Jay",
         time: "7/8/21",
         count: null,
       },
       {
+        image: require("../assets/amin-rk-Sn7VDZ3yMuE-unsplash.jpg"),
         name: "Peter Drake",
         message: "That wasn't neccesary",
         time: "2/5/20",
@@ -101,9 +112,8 @@ export default {
       },
     ]);
 
-    console.log(router.currentRoute.value.name)
-    console.log(route)
-    return { chats };
+    
+    return { chats};
   },
 };
 </script>

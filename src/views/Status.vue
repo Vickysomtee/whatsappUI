@@ -58,6 +58,7 @@ export default {
     return {
       status: [],
       viewedStatus: [],
+      image: "../assets/realtor-1.jpeg"
     };
   },
 
@@ -95,6 +96,7 @@ export default {
     this.viewedStatus = [
         {
         name: "Kayce",
+        img: "../assets/logo.png",
         time: "Today, 1:00pm",
       },
       {
@@ -120,6 +122,7 @@ export default {
 .container {
   background: #f0eeee;
   height: 100vh;
+  margin-top: 7px
 }
 
 .status {

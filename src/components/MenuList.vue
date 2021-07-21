@@ -41,6 +41,9 @@ bottom: 15px;
 float: right;
 padding: 15px 20px 0 15px;
 float: right;
+box-shadow: -1px 1px 5px 2px rgba(54,50,50,0.45);
+-webkit-box-shadow: -1px 1px 5px 2px rgba(54,50,50,0.45);
+-moz-box-shadow: -1px 1px 5px 2px rgba(54,50,50,0.45);
 }
 
 li {

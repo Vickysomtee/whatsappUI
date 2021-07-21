@@ -1,11 +1,12 @@
 <template>
-  <div class="header">
+  <Search v-if="showSearch" @closeSearch="showSearch = false"/>
+  <div v-else class="header">
     <div class="top">
       <div class="title">
         WhatsApp
       </div>
       <div class="top-icon">
-        <span class="material-icons">
+        <span class="material-icons" @click="showSearch = true">
           search
         </span>
         <span class="material-icons" @click="showMenu = !showMenu">
@@ -30,24 +31,6 @@
   <div v-if="showMenu" class="icon-menu" @click="showMenu = false">
     <MenuList />
   </div>
-  <!-- <div v-if="showMenu" class="icon-menu">
-    <ul v-if="router.currentRoute.value.name === 'Chats'">
-      <li>Settings</li>
-    <li>Settings</li>
-    <li>Settings</li>
-    </ul>
-     <ul v-if="router.currentRoute.value.name === 'Calls'">
-      <li>call</li>
-    <li>call</li>
-    <li>call</li>
-    </ul>
-
-     <ul v-if="router.currentRoute.value.name === 'Status'">
-      <li>Status</li>
-    <li>Staus</li>
-    <li>Status</li>
-    </ul>
-  </div>  -->
   <router-view />
 </template>
 
@@ -56,17 +39,20 @@ import { ref } from "@vue/reactivity";
 import { useRoute, useRouter } from "vue-router";
 
 import MenuList from "./components/MenuList.vue";
+import Search from "./components/Search.vue"
 export default {
   components: {
     MenuList,
+    Search,
   },
   setup() {
     const router = useRouter();
     const route = useRoute();
 
+    const showSearch = ref(false)
     const showMenu = ref(false);
 
-    return { showMenu, router };
+    return { showSearch, showMenu, router };
   },
 };
 </script>
